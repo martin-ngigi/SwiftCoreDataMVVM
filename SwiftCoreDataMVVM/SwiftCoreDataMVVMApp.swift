@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftCoreDataMVVMApp: App {
+    @StateObject var companyViewModel = CompanyViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CompanyListView()
+                .environmentObject(companyViewModel)
         }
     }
 }
